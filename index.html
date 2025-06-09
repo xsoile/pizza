@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Beraber pizza yemeye gidelim mi</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #999;
+      color: white;
+      position: absolute;
+    }
+
+    .hearts {
+      font-size: 3rem;
+      color: red;
+      margin-top: 30px;
+      animation: pop 1s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Beraber pizza yemeye gidelim mi?</h1>
+  <button id="yesBtn">Evet</button>
+  <button id="noBtn">Hayır</button>
+  <div id="result"></div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const result = document.getElementById("result");
+
+    noBtn.addEventListener("mouseenter", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      result.innerHTML = "<div class='hearts'>💖💖💖</div><h2>BERABER PİZZA YEMEK ACAYİP SARACAK ACAİYİP 😍</h2>";
+    });
+  </script>
+
+</body>
+</html>
